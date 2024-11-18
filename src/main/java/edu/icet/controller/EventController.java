@@ -33,6 +33,11 @@ public class EventController {
         return service.searchEventById(id);
     }
 
+    @GetMapping("/getAllEventsByCategory/{categoryType}")
+    public List<Event> getAllEventsByCategoryType(@PathVariable String categoryType) {
+        return service.getAllEventsByCategoryType(categoryType);
+    }
+
     @DeleteMapping("/delete-by-id/{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public void deleteEventById(@PathVariable Integer id){

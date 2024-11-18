@@ -1,7 +1,6 @@
 package edu.icet.service;
 
 import edu.icet.dto.Event;
-import edu.icet.dto.EventPlanner;
 
 import java.util.List;
 
@@ -11,4 +10,6 @@ public interface EventServise {
     void deleteEventById(Integer id);
     Event searchEventById(Integer id);
     void updateEventById(Event event);
+
+    List<Event> getAllEventsByCategoryType(String categoryType);
 }

@@ -18,5 +18,11 @@ public class EventEntity {
     private Integer id;
     private String eventName;
     private String eventCategory;
+    private String venue;
+    private int noOfTickets;
+    private double ticketPrice;
     private String date;
+    @Lob
+    @Column(name = "image", columnDefinition = "LONGBLOB")
+    private byte[] image;
 }

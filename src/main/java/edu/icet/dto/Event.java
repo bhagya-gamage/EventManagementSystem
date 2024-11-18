@@ -13,5 +13,9 @@ public class Event {
     private Integer id;
     private String eventName;
     private String eventCategory;
+    private String venue;
+    private int noOfTickets;
+    private double ticketprice;
     private String date;
+    private byte[] image;
 }

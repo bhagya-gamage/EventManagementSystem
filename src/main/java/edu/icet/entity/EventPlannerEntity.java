@@ -19,5 +19,8 @@ public class EventPlannerEntity {
     private String name;
     private String address;
     private String email;
+    private String password;
+    private String specialization;
+    private String experience;
     private String contact;
 }

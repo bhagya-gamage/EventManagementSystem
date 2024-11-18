@@ -46,4 +46,11 @@ public class EventServiceImpl implements EventServise{
     public void updateEventById(Event event) {
         repository.save(mapper.map(event, EventEntity.class));
     }
+
+    @Override
+    public List<Event> getAllEventsByCategoryType(String categoryType) {
+        List<Event> evenListByCategory=new ArrayList<>();
+        repository.findAllByEventCategory(categoryType).forEach(eventEntity -> evenListByCategory.add(mapper.map(eventEntity,Event.class)));
+        return evenListByCategory;
+    }
 }

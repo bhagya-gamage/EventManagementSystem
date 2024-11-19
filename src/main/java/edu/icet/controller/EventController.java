@@ -2,6 +2,7 @@ package edu.icet.controller;
 
 import edu.icet.dto.Event;
 
+import edu.icet.dto.EventPlanner;
 import edu.icet.service.EventServise;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +16,8 @@ import java.util.List;
 @RequiredArgsConstructor
 @CrossOrigin
 public class EventController {
-    @Autowired
-    final EventServise service;
+
+    private final EventServise service;
 
     @GetMapping("/get-all")
     public List<Event> getEvent(){
@@ -36,6 +37,11 @@ public class EventController {
     @GetMapping("/getAllEventsByCategory/{categoryType}")
     public List<Event> getAllEventsByCategoryType(@PathVariable String categoryType) {
         return service.getAllEventsByCategoryType(categoryType);
+    }
+
+    @GetMapping("/getAllEventsByEventPlanner/{id}")
+    public List<Event> getAllEventsByEventPlanner(@PathVariable Integer id){
+        return service.getAllEventsByEventPlanner(id);
     }
 
     @DeleteMapping("/delete-by-id/{id}")

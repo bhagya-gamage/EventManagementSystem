@@ -2,6 +2,7 @@ package edu.icet.service;
 
 import edu.icet.dto.Event;
 
+import edu.icet.dto.EventPlanner;
 import edu.icet.entity.EventEntity;
 
 import edu.icet.repository.EventDao;
@@ -52,5 +53,13 @@ public class EventServiceImpl implements EventServise{
         List<Event> evenListByCategory=new ArrayList<>();
         repository.findAllByEventCategory(categoryType).forEach(eventEntity -> evenListByCategory.add(mapper.map(eventEntity,Event.class)));
         return evenListByCategory;
+    }
+
+    @Override
+    public List<Event> getAllEventsByEventPlanner(Integer id) {
+        List<Event> eventListByEventPlanner=new ArrayList<>();
+        repository.findAllByEventPlannerId(id).forEach(eventEntity -> eventListByEventPlanner.add(mapper.map(eventEntity,Event.class)));
+        return eventListByEventPlanner;
+
     }
 }

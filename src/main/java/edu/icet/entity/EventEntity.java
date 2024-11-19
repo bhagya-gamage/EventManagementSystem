@@ -16,6 +16,7 @@ public class EventEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    private Integer eventPlannerId;
     private String eventName;
     private String eventCategory;
     private String venue;

@@ -11,11 +11,12 @@ import lombok.ToString;
 @ToString
 public class Event {
     private Integer id;
+    private Integer eventPlannerId;
     private String eventName;
     private String eventCategory;
     private String venue;
     private int noOfTickets;
-    private double ticketprice;
+    private double ticketPrice;
     private String date;
     private byte[] image;
 }

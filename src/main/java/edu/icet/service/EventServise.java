@@ -12,4 +12,6 @@ public interface EventServise {
     void updateEventById(Event event);
 
     List<Event> getAllEventsByCategoryType(String categoryType);
+
+    List<Event> getAllEventsByEventPlanner(Integer id);
 }

@@ -9,4 +9,6 @@ import java.util.List;
 @Repository
 public interface EventDao extends JpaRepository<EventEntity,Integer> {
     List<EventEntity> findAllByEventCategory(String eventCategory);
+
+    List<EventEntity> findAllByEventPlannerId(Integer id);
 }
